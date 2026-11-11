@@ -1,0 +1,60 @@
+{
+  "name": "dsh-server-session-sync",
+  "version": "0.2.0",
+  "description": "Sync DeepSeek Harness sessions between your computer and a Linux server over SSH, with previews, backups, rollback and offline recovery.",
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/**/*.js",
+    "lib/remote.py",
+    "scripts/*.mjs",
+    "test/*.mjs",
+    "test/*.py",
+    "docs/*.md",
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh-CN.md",
+    "AGENTS.md",
+    "AGENTS.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "dsh-plugin",
+    "session-sync",
+    "zstd"
+  ],
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "test": "node --test",
+    "verify": "node scripts/verify-frames.mjs"
+  },
+  "dependencies": {
+    "tar": "7.5.22"
+  },
+  "dsh": {
+    "engines": {
+      "dsh": ">=0.2.2-rc.1"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "slots"
+      ],
+      "platform": "web"
+    }
+  }
+}

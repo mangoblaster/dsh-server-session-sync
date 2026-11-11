@@ -1,0 +1,6 @@
+# dsh-server-session-sync bundle patch: one row mounts the host half (config store,
+# authenticated /api/dsh-server-session-sync routes) and the browser half (the settings
+# section with its configuration form and the two transfer buttons).
+- insert:
+    - id: session-sync
+      name: 'dsh-server-session-sync'
